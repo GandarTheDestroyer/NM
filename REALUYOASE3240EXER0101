@@ -1,37 +1,53 @@
-#include <stdio.h>
-#include <math.h>
 
-int main() {
+//JAMES ALEXIS REALUYO
+//BS AEROSPACE ENGINEERING 3A
+//MODULE 1: Introduction to Scientific Computing
+//FORMATIVE ASSESSMENT 01
+//NUMBER 1
 
-    double drag, mass, stepsize;
+    #include <stdio.h>
+    #include <math.h>
 
-    printf("A program that predicts the velocity of the ball at any given time\n\n");
+    int main() {
 
-    printf("Enter mass of ball: ");
-    scanf("%lf", &mass);
-    printf("Enter drag coeffecient:  ");
+    double drag, mass, step;
+    float v1, v2, t1, t2, perror;
+    float g=9.8;
+    int j=0;
+
+//we designate v1 v2 t1 t2 and error as float because it helps shorten the resulting values and it might take up space in the computing
+//since we're dealing with numbers that may extend beyond the limts of the program
+
+    printf("Drag coefficient: ");
     scanf("%lf", &drag);
-    printf("Enter desired step size: ");
-    scanf("%lf", &stepsize);
+    printf("Input mass of the ball: ");
+    scanf("%lf", &mass);
+    printf("Input stepsize:");
+    scanf("%lf", &step);
 
-    double velocity1, velocity2, time1, time2, percenterror;
-    double g=9.8;
-    int i=0;
+    //using do while program
+    //the program continues to calculate the velocity until it reaches a value where the perror becomes <=0.01
 
-    while (i<100){
 
-        velocity2 = velocity1 + (g-(drag/mass)*velocity1)*(time2-time1);
+    do {
+    v2=v1 + (g-(drag/mass)*v1)*(t2-t1);
 
-        printf ("\nTime: %.1f", i*stepsize);
-        printf ("\nVelocity: %.2f\n", velocity2);
+    printf("Time: %.1f\n\n", t2);
+    printf("Velocity: %.2f\n\n",v2);
+    //percent error
+    perror=((v2-v1)/v2)*100;
+    printf("Error: %.3f %%\n\n", perror);
+    v1=v2;
+    t1=t2;
+    t2=t1+step;
+    }
+    while (perror >= 0.1);
+    //we designate the percent error as 0.01
+    return 0;
 
-        velocity1 = velocity2;
-        time1 = time2;
-        time2 = time1+stepsize;
-        i++;
+    return 0;
     }
 
 
 
-    return 0;
-}
+
