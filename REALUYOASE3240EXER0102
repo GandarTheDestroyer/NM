@@ -1,1 +1,48 @@
+#include <stdio.h>
+#include <math.h>
 
+int main() {
+
+    int d;
+    double number1, number2, deci, sum, difference, product, quotient, sqrtsum;
+
+  
+    printf("\nEnter 1st number: ");
+    scanf("%lf", &number1);
+    printf("Enter 2nd number:  ");
+    scanf("%lf", &number2);
+    printf("Enter desired number of decimal places: ");
+    scanf("%d", &d);
+
+    sum=number1+number2;
+    difference=number1-number2;
+    product=number1*number2;
+    quotient=number1/number2;
+    sqrtsum=sqrt(number1)+sqrt(number2);
+
+    //Sum
+    printf("\n\nSum = %.*lf", d, sum);
+    
+    //Difference
+    printf("\n\nDifference = %.*lf", d, difference);
+    
+    //Product
+    printf("\n\nProduct = %.*lf", d, product);
+    
+    //Quotient
+    if(number2==0) {
+        printf("\n\nQuotient = undefined");
+        }
+    else{
+        printf("\n\nQuotient = %.*lf", d, quotient);
+       }
+    //Sum of Square Roots
+    if((number1<0)||(number2<0)) {
+        printf("\n\nSum of Square Roots = imaginary\n\n");
+        }
+    else{
+        printf("\n\nSum of Square Roots = %.*lf\n\n", d, sqrtsum);
+        }
+
+    return 0;
+}
