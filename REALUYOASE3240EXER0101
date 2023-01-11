@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    double drag, mass, stepsize;
+
+    printf("A program that predicts the velocity of the ball at any given time\n\n");
+
+    printf("Enter mass of ball: ");
+    scanf("%lf", &mass);
+    printf("Enter drag coeffecient:  ");
+    scanf("%lf", &drag);
+    printf("Enter desired step size: ");
+    scanf("%lf", &stepsize);
+
+    double velocity1, velocity2, time1, time2, percenterror;
+    double g=9.8;
+    int i=0;
+
+    while (i<100){
+
+        velocity2 = velocity1 + (g-(drag/mass)*velocity1)*(time2-time1);
+
+        printf ("\nTime: %.1f", i*stepsize);
+        printf ("\nVelocity: %.2f\n", velocity2);
+
+        velocity1 = velocity2;
+        time1 = time2;
+        time2 = time1+stepsize;
+        i++;
+    }
+
+
+
+    return 0;
+}
