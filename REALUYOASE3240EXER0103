@@ -1,1 +1,155 @@
 
+//JAMES ALEXIS REALUYO
+//BS AEROSPACE ENGINEERING 3A
+//MODULE 1: Introduction to Scientific Computing
+//FORMATIVE ASSESSMENT 01
+//NUMBER 3
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+    int type;
+    //sides are designated as double type of data since we are not dealing with large numbers that need float
+
+    double x;
+    double y;
+    double z;
+
+
+
+    printf("Quadrilateral Area solver");
+
+//each shape is designated with a case number
+    printf("\n  Shape Directory");
+    printf("\n  1 -Square");
+    printf("\n  2 -Rectangle");
+    printf("\n  3 -Parallelogram");
+    printf("\n  4 -Trapezoid");
+    printf("\n  5 -Rhombus");
+    printf("\n  6 -Kite");
+    printf("\nPick a number corresponding to the shape of your area: ");
+    scanf("%d", &type);
+
+
+    switch (type) {
+
+
+        /*
+        The expression is evaluated once and compared with the values of each case label.
+        If there is a match, the corresponding statements after the matching label are executed.
+        For example, if the value of the expression is equal to constant2,
+        statements after case constant2: are executed until break is encountered.
+        If there is no match, the default statements are executed.
+
+Conversion
+
+hectares = meters(0.00001)
+Acres: %lf", x*x*0.000247105
+Kilometers= meters * 0.000001
+Miles^2 = meters*0.000000386102
+
+
+*/
+    case 1: {
+            printf("\n Square shaped area-");
+            printf("\n Please enter length of side (meters)");
+            printf("\n  Side measurement:");
+            scanf("%lf", &x);
+            printf("\nArea of Square");
+            printf("\n  Meters^2: %.2lf", x*x);
+            printf("\n  Hectares: %lf", x*x*0.000001);
+            printf("\n  Acres: %lf", x*x*0.000247105);
+            printf("\n  Kilometers^2: %lf", x*x*0.0001);
+            printf("\n  Miles^2: %lf\n\n", x*x*0.000000386102);
+            break;}
+
+
+            //If we do not use the break statement, all statements after the matching label are also executed.
+// rectangle area
+    case 2: {
+            printf("\nRectangular shaped area");
+            printf("\nPlease enter length of sides (meters)");
+            printf("\n  Length: ");
+            scanf("%lf", &x);
+            printf("\n  Width: ");
+            scanf("%lf", &y);
+            printf("\nRectangle Area");
+            printf("\n  Meters^2: %lf", x*y);
+            printf("\n  Hectares: %lf", x*y*0.000001);
+            printf("\n  Acres: %lf", x*y*0.000247105);
+            printf("\n  Kilometers^2: %lf", x*y*0.0001);
+            printf("\n  Miles^2: %lf\n\n", x*y*0.000000386102);
+            break;}
+//parallelogram area
+    case 3: {
+            printf("\nParallelogram Area");
+            printf("\nPlease enter length of sides (meters)");
+            printf("\n  Base: ");
+            scanf("%lf", &x);
+            printf("\n  Height: ");
+            scanf("%lf", &y);
+            printf("\nParallelogram Area");
+            printf("\n  Meters^2: %lf", x*y);
+            printf("\n  Hectares: %lf", x*y*0.000001);
+            printf("\n  Acres: %lf", x*y*0.000247105);
+            printf("\n  Kilometers^2: %lf", x*y*0.0001);
+            printf("\n  Miles^2: %lf\n\n", x*y*0.000000386102);
+            break;}
+//trapezoid area
+    case 4: {
+            printf("\nTrapezoid Area");
+            printf("\nPlease enter length of sides (meters)");
+            printf("\n  Short base: ");
+            scanf("%lf", &x);
+            printf("\n  Long base: ");
+            scanf("%lf", &y);
+            printf("\n  Height: ");
+            scanf("%lf", &z);
+            printf("\nTrapezoid Area ");
+            printf("\n  Meters^2: %lf", (z*(x+y))/2);
+            printf("\n  Hectares: %lf", ((z*(x+y)/2)*0.000001));
+            printf("\n  Acres: %lf", ((z*(x+y))/2)*0.000247105);
+            printf("\n  Kilometers^2: %lf", ((z*(x+y))/2)*0.0001);
+            printf("\n  Miles^2: %lf\n\n", ((z*(x+y))/2)*0.000000386102);
+            break;}
+//rhombus area
+    case 5: {
+        printf("\nRhombus area-");
+            printf("\nPlease enter length of side (meters)");
+            printf("\n  First diagonal size: ");
+            scanf("%lf", &x);
+            printf("\n  Second diagonal size: ");
+            scanf("%lf", &y);
+            printf("\nRhombus Area");
+            printf("\n  Meters^2: %lf", (x*y)/2);
+            printf("\n  Hectares: %lf", ((x*y)/2)*0.000001);
+            printf("\n  Acres: %lf", ((x*y)/2)*0.000247105);
+            printf("\n  Kilometers^2: %lf", ((x*y/2)*0.0001));
+            printf("\n  Miles^2: %lf\n\n", ((x*y)/2)*0.000000386102);
+            break;}
+//kite area
+    case 6: {
+            printf("\nKite shaped area-");
+            printf("\nPlease enter length of side (meters)");
+            printf("\n  First diagonal side: ");
+            scanf("%lf", &x);
+            printf("\n  Second diagonal side: ");
+            scanf("%lf", &y);
+            printf("\n\nArea of Kite");
+            printf("\n  Meters^2: %lf", (x*y/2));
+            printf("\n  Hectares: %lf", ((x*y)/2)*0.000001);
+            printf("\n  Acres: %lf", ((x*y)/2)*0.000247105);
+            printf("\n  Kilometers^2: %lf", ((x*y)/2)*0.0001);
+            printf("\n  Miles^2: %lf\n\n", ((x*y)/2)*0.000000386102);
+            break;}
+
+        default: {
+            printf("\n\nInvalid Input.\n\n");
+            break;}
+
+    }
+
+    return 0;
+}
+
