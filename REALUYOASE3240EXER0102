@@ -1,47 +1,75 @@
+
+//JAMES ALEXIS REALUYO
+//BS AEROSPACE ENGINEERING 3A
+//MODULE 1: Introduction to Scientific Computing
+//FORMATIVE ASSESSMENT 01
+//NUMBER 2
 #include <stdio.h>
 #include <math.h>
 
 int main() {
 
+
+/*Write a C program that will calculate and show the sum, difference, product, quotient,
+and sum of the square roots of two arbitrary numbers given by a user.
+The numbers can either be positive or negative and are not limited to integer numbers.
+All answers should be shown in the specified number of decimal places which is also given by the user.
+*/
+
+// I entered shorthand names of the variables to optimize coding space
     int d;
-    double number1, number2, deci, sum, difference, product, quotient, sqrtsum;
+    double num1, num2, sum, diff, prod, quot, sqrts;
 
-  
-    printf("\nEnter 1st number: ");
-    scanf("%lf", &number1);
-    printf("Enter 2nd number:  ");
-    scanf("%lf", &number2);
-    printf("Enter desired number of decimal places: ");
+    //entering the users values
+
+    printf("\nFirst number: ");
+    scanf("%lf", &num1);
+
+    printf("\nSecond number:  ");
+    scanf("%lf", &num2);
+
+
+    //first and second numbers are designated num1 and num2 respectively
+
+    printf("\nNumber of decimal places: ");
     scanf("%d", &d);
+//decimals are designated as d
 
-    sum=number1+number2;
-    difference=number1-number2;
-    product=number1*number2;
-    quotient=number1/number2;
-    sqrtsum=sqrt(number1)+sqrt(number2);
+    //OPERATIONS
 
-    //Sum
-    printf("\n\nSum = %.*lf", d, sum);
-    
-    //Difference
-    printf("\n\nDifference = %.*lf", d, difference);
-    
-    //Product
-    printf("\n\nProduct = %.*lf", d, product);
-    
-    //Quotient
-    if(number2==0) {
-        printf("\n\nQuotient = undefined");
+    sum=num1+num2;
+
+    diff=num1-num2;
+
+    prod=num1*num2;
+
+    quot=num1/num2;
+
+    sqrts=sqrt(num1)+sqrt(num2);
+
+
+    printf("\nSum = %.*lf", d, sum);
+
+    printf("\nDifference = %.*lf", d, diff);
+
+    printf("\nProduct = %.*lf", d, prod); //the %.*lf looks for the number of decimals inputed by user which is designated as d
+
+
+    //this program can tell user that the quotient resulted as undefined since the user can enter a value of zero
+
+    if(num2==0) {
+        printf("\nQuotient = undefined");
         }
+
     else{
-        printf("\n\nQuotient = %.*lf", d, quotient);
+        printf("\nQuotient = %.*lf", d, quot);
        }
-    //Sum of Square Roots
-    if((number1<0)||(number2<0)) {
-        printf("\n\nSum of Square Roots = imaginary\n\n");
+
+    if((num1<0)||(num2<0)) {
+        printf("\nSum of Square Roots= Imaginary!\n\n");
         }
     else{
-        printf("\n\nSum of Square Roots = %.*lf\n\n", d, sqrtsum);
+        printf("\nSum Square Roots= %.*lf\n\n", d, sqrts);
         }
 
     return 0;
