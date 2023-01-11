@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+
+double Dr, mass, stepsize;
+float vi, v, t1, t2, percenterror;
+float g=9.8;
+int j=0;
+
+printf("Please input the following variables:\n\n");
+printf("Drag Coefficient ");
+scanf("%lf", &Dr);
+printf("Mass: ");
+scanf("%lf", &mass);
+printf("Stepsize:");
+scanf("%lf", &stepsize);
+
+
+while (j<16)
+ {
+
+float t=j*stepsize;	
+float a = g-(Dr/mass)*vi;
+float dt = t2-t1;
+v = vi +a*dt;
+
+printf ("Time: %.1f\n", t);
+printf ("Velocity: %.2f\n", v);
+vi = v;
+t1 = t2;
+t2 = t1+stepsize;
+j++;
+}
+
+return 0;
+}
