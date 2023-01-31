@@ -1,3 +1,8 @@
+/*Write a C program that will perform the Bisection Method that will solve the equation f(x) = 19x^(4) - 110x^(3) - 3300x^(2) + 12000. 
+The program should allow the user to input the upper and lower bounds arbitrarily but it also has to ensure that a root exists 
+between the interval given by the user. Use an error criterion of 0.1%. Show the results of all iterations in tabular form on the screen. */
+
+
 #include<stdio.h>
 #include<conio.h>
 #include<math.h>
