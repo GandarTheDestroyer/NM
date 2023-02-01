@@ -1,9 +1,5 @@
 
-//JAMES ALEXIS REALUYO
-//BS AEROSPACE ENGINEERING 3A
-//MODULE 1: Introduction to Scientific Computing
-//FORMATIVE ASSESSMENT 01
-//NUMBER 3
+//M1F1NUMBER 3
 #include <stdio.h>
 #include <math.h>
 
